@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors game</title>
+</head>
+<body>
+    <script>
+let compPaper = "The Computer Played Paper!";
+let compPaperSelected
+let compScissors = "The Computer Played Scissors";
+let compScissorsSelected
+let compRock = "The Computer Played Rock";
+let compRockSelected
+const playerSelection = playerSelection();
+const computerSelection = computerPlay();
+
+            function computerPlay() {
+                let generator = (Math.floor(Math.random() * 3) + 1)
+                
+
+                if (generator == 1){
+                    console.log(compRock);
+                    compRockSelected = "true";
+                    compPaperSelected = "false";
+                    compScissorsSelected = "false";
+                    
+                }
+                if (generator == 2){
+                    console.log(compPaper);
+                    compPaperSelected = "true";
+                    compRockSelected = "false";
+                    compScissorsSelected = "false";
+                }
+                if (generator == 3){
+                    console.log(compScissors);
+                    compScissorsSelected = "true";
+                    compRockSelected = "false";
+                    compPaperSelected = "false";
+                    
+                }
+}
+            function playerSelection() {
+                let playerChoice = prompt("Paper, Scissors or Rock?");
+                let insensitivePlayerChoice = playerChoice.toLowerCase();
+                computerPlay()
+
+                if (insensitivePlayerChoice == "paper"){
+                    console.log("You Played Paper")
+                    if (compRockSelected == "true" ) {
+                        console.log("You Win!")
+                    }
+                    if (compPaperSelected == "true") {
+                        console.log("Draw!")
+                    }
+                    if (compScissorsSelected == "true") {
+                        console.log("You lose!")
+                    
+                    }
+                }
+                
+                if (insensitivePlayerChoice == "scissors"){
+                    console.log("You Played Scissors")
+                    if (compRockSelected == "true" ) {
+                        console.log("You Lose! Rock Beats Scissors!")
+                    }
+                    if (compPaperSelected == "true") {
+                        console.log("You Win!")
+                    }
+                    if (compScissorsSelected == "true") {
+                        console.log("Draw!")
+                    
+                    }
+                }
+                if (insensitivePlayerChoice == "rock"){
+                    console.log("You Played Rock")
+                    if (compRockSelected == "true" ) {
+                        console.log("Draw!")
+                    }
+                    if (compPaperSelected == "true") {
+                        console.log("You Lose!")
+                    }
+                    if (compScissorsSelected == "true") {
+                        console.log("You Win!")
+                    
+                    }
+                }
+}
+            function playRound (playerSelection, computerSelection)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
