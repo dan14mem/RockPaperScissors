@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Paper, Scissors, Rock</title>
 </head>
 <body>
     <script>
+        
+        
+    //Variables used throughout the match. I chose to distinguish if it was the computer's output (compPaper) vs user's (paper) as it simplified other outputs.
     const compPaper = "the computer chose paper.";
     const compScissors = "the computer chose scissors.";
     const compRock = "the computer chose rock.";
@@ -19,89 +22,84 @@
     let userScore = 0;
     let compScore = 0;
 
+        // This function generates the computer's selection.
         function computerSelection() {
-            
             computerChoice = Math.floor(Math.random() * 3) +1;
                 switch(computerChoice) {
                     case 1: 
-                    return compPaper;
+                        return compPaper;
                     case 2: 
-                    return compScissors;
+                        return compScissors;
                     case 3: 
-                    return compRock;
+                        return compRock;
             }
         }
+        // This section generates the user's selection. I used the promp function to create a dialogue box for the user to input it. I converted the user's input to lower case to reduce errors
         function userSelection() {
-
-        let userInput = prompt('Paper, Scissors, or Rock?')
-        let userChoice = userInput.toLowerCase();
+            let userInput = prompt('Paper, Scissors, or Rock?')
+            let userChoice = userInput.toLowerCase();
                 switch(userChoice) {
-                    case "paper":
-                    return paper;
+                    case 'paper':
+                        return paper;
                     case 'scissors':
-                    return scissors;
+                        return scissors;
                     case 'rock':
-                    return rock;  
+                        return rock;  
                 }
         }
+
+        // This function plays each round. This will spit out the result of each round. 
         function playRound(userChoice, computerChoice) {
             userChoice = userSelection()
             computerChoice = computerSelection() 
-
-            function matchWin() {
-                
-                userScore++;
-                return console.log(userChoice + computerChoice + win);
-
-            }   
-            function matchLose()   {
-                compScore++;
-                return console.log(userChoice + computerChoice + loss)
-            }      
-            function matchDraw() {
-                return console.log(userChoice + computerChoice + draw);
-            }
             
-                if (userChoice == scissors && computerChoice == compPaper) {
+                //These if statements determine the winner (computer or user)
+                if (userChoice == scissors && computerChoice == compPaper || userChoice == paper && computerChoice == compRock ||
+                    userChoice == rock && computerChoice == compScissors) {
                     return matchWin()
                 }
-                if (userChoice == rock && computerChoice == compPaper) {
-                    return matchLose()
-                }
-                if (userChoice == paper && computerChoice == compScissors) {
-                    return matchLose()
-                }
-                if (userChoice == paper && computerChoice == compRock) {
-                    return matchWin()
-                }
-                if (userChoice == scissors && computerChoice == compRock) {
-                    return matchLose()
-                }
-                if (userChoice == rock && computerChoice == compScissors) {
+                if (userChoice == rock && computerChoice == compPaper || userChoice == paper && computerChoice == compScissors ||
+                    userChoice == scissors && computerChoice == compRock) {
                     return matchLose()
                 }
                     else {
                     return matchDraw()
                     }
-        }
-        function game() {
-         
-        round = 0
-            do {
-                round++
-                playRound();
-                console.log("your score: " + userScore.toString())
-                console.log("computers Score: " + compScore.toString())
-                if (userScore < compScore && round ==5) {
-                    alert("You lost the Game!")
-                }
-                if(userScore > compScore && round ==5) {
-                    alert("You won the Game!")
-                }
-            } while (round < 5);
+            // These function's create the output, determined by the if statements above
+            function matchWin() {
+                
+                userScore++;
+                return console.log(userChoice + computerChoice + win);
+            }              
+            function matchLose()   {
+                compScore++;
+                return console.log(userChoice + computerChoice + loss)
+            }      
 
+            function matchDraw() {
+                return console.log(userChoice + computerChoice + draw);
+            }
         }
-    game()
+        //This function creates the loop which determines that the match is 5 rounds. It also outputs the score after each round
+        function playGame() {
+            let round = 0;
+
+                do {
+                    round++
+                    playRound();
+                    console.log("your score: " + userScore.toString())
+                    console.log("computers Score: " + compScore.toString())
+                
+                    if (userScore < compScore && round ==5) {
+                    alert("You lost the Game!")
+                    }
+                    if(userScore > compScore && round ==5) {
+                    alert("You won the Game!")
+                    }
+            }       while (round < 5);
+        }
+
+    playGame()
 </script>
 </body>
 </html>
