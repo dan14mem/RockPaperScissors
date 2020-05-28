@@ -3,105 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors game</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-let compPaper = "The Computer Played Paper!";
-let compPaperSelected
-let compScissors = "The Computer Played Scissors";
-let compScissorsSelected
-let compRock = "The Computer Played Rock";
-let compRockSelected
-const playerSelection = playerSelection();
-const computerSelection = computerPlay();
+    const compPaper = "the computer chose paper.";
+    const compScissors = "the computer chose scissors.";
+    const compRock = "the computer chose rock.";
+    const paper = "You chose paper and ";
+    const scissors = "You chose scissors and ";
+    const rock = "You chose rock and ";
+    const win = " You win!";
+    const loss = " You lose!";
+    const draw = " It's a draw!";
+    let userScore = 0;
+    let compScore = 0;
 
-            function computerPlay() {
-                let generator = (Math.floor(Math.random() * 3) + 1)
+        function computerSelection() {
+            
+            computerChoice = Math.floor(Math.random() * 3) +1;
+                switch(computerChoice) {
+                    case 1: 
+                    return compPaper;
+                    case 2: 
+                    return compScissors;
+                    case 3: 
+                    return compRock;
+            }
+        }
+        function userSelection() {
+
+        let userInput = prompt('Paper, Scissors, or Rock?')
+        let userChoice = userInput.toLowerCase();
+                switch(userChoice) {
+                    case "paper":
+                    return paper;
+                    case 'scissors':
+                    return scissors;
+                    case 'rock':
+                    return rock;  
+                }
+        }
+        function playRound(userChoice, computerChoice) {
+            userChoice = userSelection()
+            computerChoice = computerSelection() 
+
+            function matchWin() {
                 
+                userScore++;
+                return console.log(userChoice + computerChoice + win);
 
-                if (generator == 1){
-                    console.log(compRock);
-                    compRockSelected = "true";
-                    compPaperSelected = "false";
-                    compScissorsSelected = "false";
-                    
+            }   
+            function matchLose()   {
+                compScore++;
+                return console.log(userChoice + computerChoice + loss)
+            }      
+            function matchDraw() {
+                return console.log(userChoice + computerChoice + draw);
+            }
+            
+                if (userChoice == scissors && computerChoice == compPaper) {
+                    return matchWin()
                 }
-                if (generator == 2){
-                    console.log(compPaper);
-                    compPaperSelected = "true";
-                    compRockSelected = "false";
-                    compScissorsSelected = "false";
+                if (userChoice == rock && computerChoice == compPaper) {
+                    return matchLose()
                 }
-                if (generator == 3){
-                    console.log(compScissors);
-                    compScissorsSelected = "true";
-                    compRockSelected = "false";
-                    compPaperSelected = "false";
-                    
+                if (userChoice == paper && computerChoice == compScissors) {
+                    return matchLose()
                 }
-}
-            function playerSelection() {
-                let playerChoice = prompt("Paper, Scissors or Rock?");
-                let insensitivePlayerChoice = playerChoice.toLowerCase();
-                computerPlay()
-
-                if (insensitivePlayerChoice == "paper"){
-                    console.log("You Played Paper")
-                    if (compRockSelected == "true" ) {
-                        console.log("You Win!")
-                    }
-                    if (compPaperSelected == "true") {
-                        console.log("Draw!")
-                    }
-                    if (compScissorsSelected == "true") {
-                        console.log("You lose!")
-                    
-                    }
+                if (userChoice == paper && computerChoice == compRock) {
+                    return matchWin()
                 }
-                
-                if (insensitivePlayerChoice == "scissors"){
-                    console.log("You Played Scissors")
-                    if (compRockSelected == "true" ) {
-                        console.log("You Lose! Rock Beats Scissors!")
-                    }
-                    if (compPaperSelected == "true") {
-                        console.log("You Win!")
-                    }
-                    if (compScissorsSelected == "true") {
-                        console.log("Draw!")
-                    
-                    }
+                if (userChoice == scissors && computerChoice == compRock) {
+                    return matchLose()
                 }
-                if (insensitivePlayerChoice == "rock"){
-                    console.log("You Played Rock")
-                    if (compRockSelected == "true" ) {
-                        console.log("Draw!")
-                    }
-                    if (compPaperSelected == "true") {
-                        console.log("You Lose!")
-                    }
-                    if (compScissorsSelected == "true") {
-                        console.log("You Win!")
-                    
-                    }
+                if (userChoice == rock && computerChoice == compScissors) {
+                    return matchLose()
                 }
-}
-            function playRound (playerSelection, computerSelection)
+                    else {
+                    return matchDraw()
+                    }
+        }
+        function game() {
+         
+        
+            do {
+                playRound();
+                console.log("your score: " + userScore.toString())
+                console.log("computers Score: " + compScore.toString())
+                if (compScore == 5) {
+                    alert("You lost the Game!")
+                }
+                if(userScore ==5) {
+                    alert("You won the Game!")
+                }
+            } while (userScore < 5 && compScore < 5);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
+        }
+    game()
+</script>
 </body>
 </html>
