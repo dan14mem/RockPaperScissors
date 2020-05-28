@@ -54,12 +54,14 @@
         computerChoice = computerSelection() 
             
         //These if statements determine the winner (computer or user)
-        if (userChoice == scissors && computerChoice == compPaper || userChoice == paper && computerChoice == compRock ||
-            userChoice == rock && computerChoice == compScissors) {
+        if (userChoice == scissors && computerChoice == compPaper || 
+                userChoice == paper && computerChoice == compRock ||
+                userChoice == rock && computerChoice == compScissors) {
             return matchWin()
         }
-        if (userChoice == rock && computerChoice == compPaper || userChoice == paper && computerChoice == compScissors ||
-            userChoice == scissors && computerChoice == compRock) {
+        if (userChoice == rock && computerChoice == compPaper ||
+                userChoice == paper && computerChoice == compScissors ||
+                userChoice == scissors && computerChoice == compRock) {
             return matchLose()
         }
         else {
