@@ -20,6 +20,8 @@ let playerWin = computerWin = false;
 //query selector to manipulate where the score is outputted on html
 let compsScore = document.querySelector('.compsScore');
 let playerScore = document.querySelector(`.userScore`);
+const computerHand = document.querySelector("#computerHand")
+const humanHand = document.querySelector("#humanHand")
 //buttons
 const buttons = document.querySelectorAll('img');
     const buttonRock = document.querySelector('#rock')
@@ -40,10 +42,13 @@ let battleText = document.querySelector('.battleStatus');
         computerChoice = Math.floor(Math.random() * 3) +1;
             switch(computerChoice) {
                 case 1: 
+                computerHand.setAttribute('src', 'paper1.jpeg');
                     return compPaper;
                 case 2: 
+                computerHand.setAttribute('src', 'scissors1.jpeg');
                     return compScissors;
                 case 3: 
+                computerHand.setAttribute('src', 'rock1.jpeg');
                     return compRock;
             }
         }
@@ -106,6 +111,8 @@ function removeButtons() {
     buttonRockComp.parentNode.removeChild(buttonRockComp)
     buttonPaperComp.parentNode.removeChild(buttonPaperComp);
     buttonScissorsComp.parentNode.removeChild(buttonScissorsComp);
+    computerHand.parentNode.removeChild(computerHand);
+    humanHand.parentNode.removeChild(humanHand);
 }
 //This function creates the loop which determines that the match is 5 rounds. It also outputs the score after each round
 function playGame(userScore, compScore) {     
@@ -134,23 +141,30 @@ function playGame(userScore, compScore) {
         removeButtons()
     }
 }
+
  //playing the game
 buttonRock.addEventListener('click', () => {
     playerChoice = playOptions[0]
     playRound(playerChoice, computerSelection());
-    playGame(userScore, compScore)
+    playGame(userScore, compScore);
+ 
+    humanHand.setAttribute('src', 'rock1.jpeg');
 });
 buttonPaper.addEventListener('click', () => {
     playerChoice = playOptions[1]
     playRound(playerChoice, computerSelection());
     textOutput()
-    playGame(userScore, compScore)
+    playGame(userScore, compScore);
+  
+    humanHand.setAttribute('src', 'paper1.jpeg');
 });
 buttonScissors.addEventListener('click', () => {
     playerChoice = playOptions[2]
     playRound(playerChoice, computerSelection());
     textOutput()
     playGame(userScore, compScore)
+   
+    humanHand.setAttribute('src', 'scissors1.jpeg')
 });
 resetButton.addEventListener('click', () => {
     location.reload();

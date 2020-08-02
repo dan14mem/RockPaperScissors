@@ -1,5 +1,7 @@
 
-
+body {
+    background-color: #e0e0e0; 
+}
 
 .wrapper {
     display: grid;
@@ -33,7 +35,7 @@ img {
 .weapons {
     
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px 150px 350px 150px 150px;
     justify-items: center;
     text-align: center;
@@ -43,22 +45,32 @@ img {
     box-shadow: none;
     border-radius: none;
     align-items: center;
-    grid-column:2;
+    grid-column-start:2;
+    grid-column-end: 3;
     grid-row: 3;
 }
 .resetButton {
     grid-column: 2;
     grid-row: 4;
 }
+#humanHand {
+    grid-column: 2;
+    grid-row: 3;
+}
+#computerHand {
+    grid-column: 3;
+    grid-row: 3;
+}
 
 .userChoice {
     grid-column-start: 1;
 }
 .computerChoice {
-    grid-column-start: 3;
+    grid-column-start: 4;
 }
 .battleStatus {
     grid-column-start: 2;
+    grid-column-end: 4;
     
     grid-row: 2;
 }
