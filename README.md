@@ -1,7 +1,7 @@
 # RockPaperScissors
 A basic text based game to practice Javascript logic and the Document Object Model for The Odin Project. I have added a frontend with CSS and HTML.
 
-##How To Use
+## How To Use
 
 [click here to access the Github page](https://dan14mem.github.io/RockPaperScissors/)
 
