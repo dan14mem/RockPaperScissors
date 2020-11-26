@@ -10,7 +10,7 @@ There are three buttons on the left, each representing a weapon for you to choos
 ### Links to my other projects
 
 - Library [live preview](https://dan14mem.github.io/library/) | [source code](https://github.com/dan14mem/library)
-- Calculator [live preview](https://github.com/dan14mem/calculator) 
+- Calculator [live preview](https://dan14mem.github.io/calculator/) | [source code](https://github.com/dan14mem/calculator) 
 - Etch-a-sketch [live preview](https://dan14mem.github.io/etch-a-sketch/) | [source code](https://github.com/dan14mem/etch-a-sketch)
 - Google home page reproduction [live preview](https://dan14mem.github.io/google-homepage/) | [source code](https://github.com/dan14mem/google-homepage)
 
