@@ -1,89 +1,57 @@
+.game-wrapper {
 
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
 body {
     background-color: #e0e0e0; 
 }
 
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 50px;
-}
-h1 {
+.title-wrapper {
     grid-column: 2;
     grid-row: 1;
+    padding-bottom: 5em;
 }
-h2{
-    grid-column: 2;
+.user-weapons {
+    grid-column: 1;
     grid-row: 2;
 }
-p {
+
+.buttons:hover {
+   
+    border: black solid 7px
+}
+
+.result-wrapper {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
+    padding-top: 5em;
+    padding-left: 3em;
+    padding-right: 1em;
 }
-img {
-    border: 5px solid black;
-    margin: 20px;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-}
-.buttons:hover { border: 6px solid black;
-}
-.buttons:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-.weapons {
+
+.computer-weapons {
+    grid-column: 3;
+    grid-row: 2;
     
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 150px 350px 150px 150px;
-    justify-items: center;
-    text-align: center;
+}
+.center {
+    justify-content: center;
+    
 }
 .winner {
-    border: 0px ;
-    box-shadow: none;
-    border-radius: none;
-    align-items: center;
-    grid-column-start:2;
-    grid-column-end: 3;
-    grid-row: 3;
+    justify-content: center;
 }
-.resetButton {
-    grid-column: 2;
-    grid-row: 4;
-}
-#humanHand {
-    grid-column: 2;
-    grid-row: 3;
-}
-#computerHand {
-    grid-column: 3;
-    grid-row: 3;
+li {
+    list-style: none;
 }
 
-.userChoice {
-    grid-column-start: 1;
-}
-.computerChoice {
-    grid-column-start: 4;
-}
-.battleStatus {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    
-    grid-row: 2;
-}
-ul {
-    list-style-type: none;
-}
-.commentary {
-    grid-column-start: 2;
-
-    grid-row-start: 2;
+.border {
+    border: black solid 4px;
 }
 
 
 
-    
+
 
