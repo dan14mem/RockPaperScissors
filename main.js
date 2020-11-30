@@ -42,13 +42,13 @@ let battleText = document.querySelector('.battleStatus');
         computerChoice = Math.floor(Math.random() * 3) +1;
             switch(computerChoice) {
                 case 1: 
-                computerHand.setAttribute('src', 'paper1.jpeg');
+                computerHand.setAttribute('src', 'img/paper1.jpeg');
                     return compPaper;
                 case 2: 
-                computerHand.setAttribute('src', 'scissors1.jpeg');
+                computerHand.setAttribute('src', 'img/scissors1.jpeg');
                     return compScissors;
                 case 3: 
-                computerHand.setAttribute('src', 'rock1.jpeg');
+                computerHand.setAttribute('src', 'img/rock1.jpeg');
                     return compRock;
             }
         }
@@ -118,7 +118,7 @@ function removeButtons() {
 function playGame(userScore, compScore) {     
     if (userScore >=5) {
         const compWon = document.createElement('IMG')
-        compWon.setAttribute("src", "person.jpeg")
+        compWon.setAttribute("src", "img/person.jpeg")
         compWon.setAttribute("width", "350");
         compWon.setAttribute("height", "350");
         winner.appendChild(compWon);
@@ -130,7 +130,7 @@ function playGame(userScore, compScore) {
     }
     if(compScore >=5) {
         const compWon = document.createElement('IMG')
-        compWon.setAttribute("src", "computer.jpg")
+        compWon.setAttribute("src", "img/computer.jpg")
         compWon.setAttribute("width", "350");
         compWon.setAttribute("height", "350");
         winner.appendChild(compWon);
@@ -148,7 +148,7 @@ buttonRock.addEventListener('click', () => {
     playRound(playerChoice, computerSelection());
     playGame(userScore, compScore);
  
-    humanHand.setAttribute('src', 'rock1.jpeg');
+    humanHand.setAttribute('src', 'img/rock1.jpeg');
 });
 buttonPaper.addEventListener('click', () => {
     playerChoice = playOptions[1]
@@ -156,7 +156,7 @@ buttonPaper.addEventListener('click', () => {
     textOutput()
     playGame(userScore, compScore);
   
-    humanHand.setAttribute('src', 'paper1.jpeg');
+    humanHand.setAttribute('src', 'img/paper1.jpeg');
 });
 buttonScissors.addEventListener('click', () => {
     playerChoice = playOptions[2]
@@ -164,7 +164,7 @@ buttonScissors.addEventListener('click', () => {
     textOutput()
     playGame(userScore, compScore)
    
-    humanHand.setAttribute('src', 'scissors1.jpeg')
+    humanHand.setAttribute('src', 'img/scissors1.jpeg')
 });
 resetButton.addEventListener('click', () => {
     location.reload();
